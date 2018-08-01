@@ -1,0 +1,111 @@
+[ {
+  "exportId" : "1GRlsWPkRzeh0GAminw29w",
+  "name" : "file",
+  "paramType" : {
+    "exportId" : "File",
+    "name" : "File"
+  },
+  "question" : "If you have a photo or video, upload/paste it now.",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "5fc7rCTdQuGO58NrII755Q",
+  "name" : "impact",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `impact`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "Uc7uDR4xS822sz6SHRNF6g",
+  "name" : "recipient",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Whom would you like to recognize with kudos?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "UiBBkpITSP6yI4TIXZq0MQ",
+  "name" : "reason",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What did this person do that you appreciate?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "_MIG94msQ_GJ5Ax0GaTkSQ",
+  "name" : "senderName",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `senderName`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "bum5qZh_Q_ql5fWIBBjPLA",
+  "name" : "fileUrl",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `fileUrl`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "cPfhrdX0Q_-_f6VweIIZnA",
+  "name" : "recipient",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `recipient`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "lDafmRXeRgKwdLRF0lclEQ",
+  "name" : "channel",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Which channel should I send kudos in? (I'll remember this next time.)",
+  "isSavedForTeam" : true,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "n_dDi3GSQs68sourIxXOQA",
+  "name" : "senderId",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `senderId`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "v37V4YknRJWzACtj98fDiQ",
+  "name" : "reason",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `reason`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "ytrXRQPrTCuGB4YKIhfTkw",
+  "name" : "impact",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What was the impact on the company?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+} ]

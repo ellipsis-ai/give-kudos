@@ -1,0 +1,8 @@
+{
+  "name" : "Give Kudos",
+  "exportId" : "41wbwPPoSh28ehFwh9Hi2Q",
+  "icon" : "⭐️",
+  "requiredAWSConfigs" : [ ],
+  "requiredOAuth2ApiConfigs" : [ ],
+  "requiredSimpleTokenApis" : [ ]
+}
