@@ -28,7 +28,7 @@ function uploadFile() {
     if (file) {
       file.fetch().then(fetchResult => {
         box.files(ellipsis).uploadWithTimestamp(fetchResult.filename, fetchResult.contentType, fetchResult.value).then(uploadResult => {
-          resolve({ url: uploadResult.url, filename: fetchResult.filename });
+          resolve({ url: uploadResult.downloadUrl, filename: fetchResult.filename });
         })
       });
     } else {

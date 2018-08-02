@@ -6,7 +6,8 @@ const actionsApi = new EllipsisApi(ellipsis).actions;
 actionsApi.say({
   message: `
 ${randomResponse.greetingForTimeZone(ellipsis.teamInfo.timeZone)}
-<@${senderId}> has given kudos to ${recipient}!
+
+**<@${senderId}> has given kudos to ${recipient}!**
 
 **What ${recipient} did:**
 ${reason}
@@ -16,7 +17,7 @@ ${impact}
 
 ${fileUrl === "(none)" ? "" : fileUrl}
 
-${randomResponse.responseWithEmoji("congratulatory")}
+**${randomResponse.responseWithEmoji("congratulatory")}**
 `,
   channel: channel
 }).then(() => {
