@@ -14,10 +14,7 @@ ${reason}
 **Impact on the company:**
 ${impact}
 
-${fileUrl ? 
-  `**Photo/video:**
-${fileUrl}
-` : ""}
+${fileUrl === "(none)" ? "" : fileUrl}
 
 ${randomResponse.responseWithEmoji("congratulatory")}
 `,
