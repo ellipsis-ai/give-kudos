@@ -1,11 +1,23 @@
 function(recipient, reason, impact, file, ellipsis) {
   const box = require('ellipsis-box');
+const formatList = require('formatting').formatList;
 
 uploadFile().then((fileInfo) => {
+  const recipientUsers = usersForName(recipient);
+  const recipientNames = recipientUsers ? formatList(recipientUsers) : recipient;
+  const recipientLink = recipientUsers ? formatList(recipientUsers.map((ea) => {
+    const user = userLinkForUser(ea);
+    if (user) {
+      return `<@${user.userIdForContext}>`;
+    } else {
+      return `@${ea}`;
+    }
+  })) : recipient;
   const output = {
     senderId: ellipsis.userInfo.messageInfo.userId,
     senderName: ellipsis.userInfo.fullName,
-    recipient: recipient,
+    recipient: recipientLink,
+    recipientNames: recipientNames,
     reason: reason,
     impact: impact,
     fileUrl: fileInfo ? fileInfo.url : "(none)"
@@ -34,6 +46,23 @@ function uploadFile() {
     } else {
       resolve(null); 
     }
+  });
+}
+
+function usersForName(formattedNames) {
+  if (/@/.test(formattedNames)) {
+    return formattedNames
+      .split("@")
+      .map((ea) => ea.replace(/,\s*/g, "").replace(/\s*and\s*$/g, "").trim())
+      .filter((ea) => Boolean(ea));
+  } else {
+    return null;
+  }
+}
+
+function userLinkForUser(name) {
+  return ellipsis.userInfo.messageInfo.usersMentioned.find((user) => {
+    return user.userName === name || user.fullName === name;
   });
 }
 }

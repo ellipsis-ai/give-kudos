@@ -9,6 +9,16 @@
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
+  "exportId" : "5RIk2gLqS9GHq14MB-rlqw",
+  "name" : "recipientNames",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `recipientNames`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "5fc7rCTdQuGO58NrII755Q",
   "name" : "impact",
   "paramType" : {

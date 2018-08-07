@@ -2,7 +2,7 @@ OK, here's what I have:
 
 <@{ellipsis.userInfo.messageInfo.userId}> has given kudos to {successResult.recipient}.
 
-**What {successResult.recipient} did:**
+**What they did:**
 {successResult.reason}
 
 **Impact on the company:**
