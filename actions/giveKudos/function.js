@@ -53,7 +53,7 @@ function usersForName(formattedNames) {
   if (/@/.test(formattedNames)) {
     return formattedNames
       .split("@")
-      .map((ea) => ea.replace(/,\s*/g, "").replace(/\s*and\s*$/g, "").trim())
+      .map((ea) => ea.replace(/,\s*/g, "").replace(/\s*(and|\&|\+)\s*$/g, "").trim())
       .filter((ea) => Boolean(ea));
   } else {
     return null;
