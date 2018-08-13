@@ -2,6 +2,23 @@ function(recipient, recipientNames, senderId, senderName, reason, impact, fileUr
   const EllipsisApi = require('ellipsis-api');
 const randomResponse = require('ellipsis-random-response');
 const actionsApi = new EllipsisApi(ellipsis).actions;
+const client = require('google-client')(ellipsis);
+const {google} = require('googleapis');
+const sheets = google.sheets('v4');
+const moment = require('moment-timezone');
+
+const timestamp = moment.tz(ellipsis.teamInfo.timeZone).format('YYYY-MM-DD hh:mm:ss a');
+const values = [[
+  timestamp,
+  senderId,
+  senderName,
+  recipient,
+  recipientNames,
+  reason,
+  impact,
+  fileUrl
+]];
+
 actionsApi.say({
   message: `
 ${randomResponse.greetingForTimeZone(ellipsis.teamInfo.timeZone)}
@@ -20,7 +37,29 @@ ${fileUrl === "(none)" ? "" : fileUrl}
 `,
   channel: channel
 }).then(() => {
-  ellipsis.success(`Your kudos have been sent to the channel ${channel}.`)
+  if (!ellipsis.env.KUDOS_SHEET_ID || !ellipsis.env.KUDOS_SHEET_NAME) {
+    ellipsis.error("This skill requires two environment variables to be set so kudos can be saved to a spreadsheet: KUDOS_SHEET_ID and KUDOS_SHEET_NAME");
+  } else {
+    client.authorize().then(() => {
+      const request = {
+        spreadsheetId: ellipsis.env.KUDOS_SHEET_ID,
+        range: ellipsis.env.KUDOS_SHEET_NAME,
+        valueInputOption: 'USER_ENTERED',
+        resource: {
+          values: values
+        },
+        auth: client,
+      };
+      return sheets.spreadsheets.values.append(request).then((res) => {
+        const updated = res.data.updates.updatedRows;
+        if (updated == 0) {
+          ellipsis.error(`Your kudos were published to the channel ${channel} but there was a problem saving them to the spreadsheet.`);
+        } else {
+          ellipsis.success(`Your kudos have been sent to the channel ${channel}.`)
+        }
+      });        
+    });
+  }
 }).catch((err) => {
   throw new ellipsis.Error(err, {
     userMessage: "Something went wrong while trying to send kudos. Perhaps that channel doesn't exist?"
