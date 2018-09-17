@@ -19,8 +19,12 @@ const values = [[
   fileUrl
 ]];
 
-actionsApi.say({
-  message: `
+actionsApi.run({
+  actionName: "publishKudos",
+  channel: channel,
+  args: [{
+    name: "message",
+    value: `
 ${randomResponse.greetingForTimeZone(ellipsis.teamInfo.timeZone)}
 
 **<@${senderId}> has given kudos to ${recipient}!**
@@ -34,8 +38,8 @@ ${impact}
 ${fileUrl === "(none)" ? "" : fileUrl}
 
 **${randomResponse.responseWithEmoji("congratulatory")}**
-`,
-  channel: channel
+`
+  }]
 }).then(() => {
   if (!ellipsis.env.KUDOS_SHEET_ID || !ellipsis.env.KUDOS_SHEET_NAME) {
     ellipsis.error("This skill requires two environment variables to be set so kudos can be saved to a spreadsheet: KUDOS_SHEET_ID and KUDOS_SHEET_NAME");
@@ -55,7 +59,7 @@ ${fileUrl === "(none)" ? "" : fileUrl}
         if (updated == 0) {
           ellipsis.error(`Your kudos were published to the channel ${channel} but there was a problem saving them to the spreadsheet.`);
         } else {
-          ellipsis.success(`Your kudos have been sent to the channel ${channel}.`)
+          ellipsis.success(`Your kudos have been sent to the channel ${channel}.`);
         }
       });        
     });

@@ -1,7 +1,7 @@
 {
   "exportId" : "HISCIg1PQ4G8T7sB0e-W1Q",
   "name" : "setupKudos",
-  "forcePrivateResponse" : false,
+  "responseTypeId" : "Normal",
   "canBeMemoized" : false,
   "isDataType" : false,
   "isTest" : false
