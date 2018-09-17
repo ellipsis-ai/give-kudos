@@ -29,6 +29,16 @@
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
+  "exportId" : "6NvMpWJoSwadvHqIV3CPog",
+  "name" : "message",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `message`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "Uc7uDR4xS822sz6SHRNF6g",
   "name" : "recipient",
   "paramType" : {
