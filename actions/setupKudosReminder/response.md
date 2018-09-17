@@ -1,0 +1,1 @@
+OK, I scheduled a reminder for people to give kudos in {channel}. It will run on schedule {successResult.recurrence}, starting {successResult.firstRecurrence}.

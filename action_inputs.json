@@ -35,7 +35,27 @@
     "exportId" : "Text",
     "name" : "Text"
   },
-  "question" : "What is the value for `message`?",
+  "question" : "Enter kudos message to publish.",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "TfpbTy_tS76JB5OA7tsx5g",
+  "name" : "channel",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "In what channel should I remind people about giving kudos?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "TlwEIwj7SeC4Z60FzgsDPw",
+  "name" : "recurrence",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "When should I remind people? e.g. \"every week on Fridays at 8am\"",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
@@ -86,6 +106,16 @@
     "name" : "Text"
   },
   "question" : "What is the value for `recipient`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "j40iK3f6SuyJypPD3j91Jw",
+  "name" : "shouldRemind",
+  "paramType" : {
+    "exportId" : "Yes/No",
+    "name" : "Yes/No"
+  },
+  "question" : "Would you like me to schedule a recurring message in a particular channel to remind people to give kudos?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {

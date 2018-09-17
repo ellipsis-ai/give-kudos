@@ -1,6 +1,6 @@
 function(recipient, recipientNames, senderId, senderName, reason, impact, fileUrl, channel, ellipsis) {
-  const EllipsisApi = require('ellipsis-api');
-const randomResponse = require('ellipsis-random-response');
+  const randomResponse = require('ellipsis-random-response');
+const EllipsisApi = require('ellipsis-api');
 const actionsApi = new EllipsisApi(ellipsis).actions;
 const client = require('google-client')(ellipsis);
 const {google} = require('googleapis');
@@ -20,13 +20,11 @@ const values = [[
 ]];
 
 actionsApi.run({
-  actionName: "publishKudos",
+  actionName: "publishMessage",
   channel: channel,
   args: [{
     name: "message",
     value: `
-${randomResponse.greetingForTimeZone(ellipsis.teamInfo.timeZone)}
-
 **<@${senderId}> has given kudos to ${recipient}!**
 
 **What they did:**

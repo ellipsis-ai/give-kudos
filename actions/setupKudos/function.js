@@ -1,4 +1,4 @@
-function(channel, ellipsis) {
+function(channel, shouldRemind, ellipsis) {
   const unsetVars = ["KUDOS_SHEET_NAME", "KUDOS_SHEET_ID"].filter((ea) => !ellipsis.env[ea]);
 let result = "";
 if (unsetVars.length === 2) {
@@ -7,5 +7,11 @@ ${unsetVars.join(", ")}`;
 } else if (unsetVars.length === 1) {
   result = `The environment variable ${unsetVars[0]} needs to be set to save kudos to a spreadsheet.`
 }
-ellipsis.success(result);
+const options = {};
+if (shouldRemind) {
+  options.next = {
+    actionName: "setupKudosReminder"
+  };
+}
+ellipsis.success(result, options);
 }
