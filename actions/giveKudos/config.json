@@ -1,7 +1,7 @@
 {
   "exportId" : "X40eE9x6QrqGrOjUvuvE1A",
   "name" : "giveKudos",
-  "responseTypeId" : "Threaded",
+  "responseTypeId" : "Private",
   "canBeMemoized" : false,
   "isDataType" : false,
   "isTest" : false
