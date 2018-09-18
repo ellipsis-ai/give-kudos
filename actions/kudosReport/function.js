@@ -55,7 +55,9 @@ function kudoTextFor(numPeople, nameText) {
   } else if (numPeople === 1) {
     return `kudos have been given to ${nameText}. Anyone else deserving?`
   } else {
-    return `${numPeople} people have been given kudos: ${nameText}. Keep it coming!`
+    return `kudos have been given out ${numPeople} times. Well done, ${nameText}.
+
+Keep it coming!`
   }
 }
 }
