@@ -7,7 +7,7 @@ const moment = require('moment-timezone');
 moment.tz.setDefault(ellipsis.teamInfo.timeZone);
 const now = moment();
 const min = now.clone().subtract(numDays, 'days');
-const humanizeList = ellipsis.require('humanize-list@1.0.1');
+const greeting = require('ellipsis-random-response').greetingForTimeZone(ellipsis.teamInfo.timeZone);
 
 if (!ellipsis.env.KUDOS_SHEET_ID || !ellipsis.env.KUDOS_SHEET_NAME) {
   ellipsis.error("This skill requires two environment variables to be set so kudos can be saved to a spreadsheet: KUDOS_SHEET_ID and KUDOS_SHEET_NAME");
@@ -33,29 +33,33 @@ if (!ellipsis.env.KUDOS_SHEET_ID || !ellipsis.env.KUDOS_SHEET_NAME) {
         const names = withinRange.map((row) => {
           return row[3] || row[4] || null
         }).filter((ea) => Boolean(ea));
-        const nameText = humanizeList(names, { oxfordComma: true });
-        ellipsis.success(`In the last ${
-            numDays === 1 ? "day" : `${numDays} days`
-        }, ${kudoTextFor(names.length, nameText)}`, {
+        const options = {
           choices: [{
             actionName: "giveKudos",
             label: "Give kudos",
             allowOthers: true,
             allowMultipleSelections: true
           }]
-        });
+        };
+        ellipsis.success(`
+${greeting}
+
+In the last ${numDays === 1 ? "day" : `${numDays} days`}, ${kudoTextFor(names)}
+`, options);
       }
     });
   });
 }
 
-function kudoTextFor(numPeople, nameText) {
-  if (numPeople === 0) {
+function kudoTextFor(names) {
+  if (names.length === 0) {
     return "nobody has been given kudos. It’s not too late!"
-  } else if (numPeople === 1) {
-    return `kudos have been given to ${nameText}. Anyone else deserving?`
+  } else if (names.length === 1) {
+    return `kudos have been given to ${names[0]}. Anyone else deserve a shout-out?`
   } else {
-    return `kudos have been given out ${numPeople} times. Well done, ${nameText}.
+    return `kudos have been given out ${names.length} times. Well done:
+
+- ${names.join("\n- ")}
 
 Keep it coming!`
   }
