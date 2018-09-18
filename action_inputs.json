@@ -158,4 +158,14 @@
   "question" : "What was the impact on the company?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
+}, {
+  "exportId" : "zHiTS4-JRJySGOu7I0MqdQ",
+  "name" : "numDays",
+  "paramType" : {
+    "exportId" : "Number",
+    "name" : "Number"
+  },
+  "question" : "How many days back would you like to a report for?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
 } ]
