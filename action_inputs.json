@@ -65,7 +65,7 @@
     "exportId" : "Text",
     "name" : "Text"
   },
-  "question" : "Whom would you like to recognize with kudos?",
+  "question" : "Whom would you like to recognize with kudos? (Note: you'll have a chance to review your submission before publishing.)",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
@@ -125,7 +125,7 @@
     "exportId" : "Text",
     "name" : "Text"
   },
-  "question" : "Which channel should I send kudos in? (I'll remember this next time.)",
+  "question" : "Which channel should I send kudos in?",
   "isSavedForTeam" : true,
   "isSavedForUser" : false
 }, {
@@ -156,6 +156,16 @@
     "name" : "Text"
   },
   "question" : "What was the impact on the company?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "zHiTS4-JRJySGOu7I0MqdQ",
+  "name" : "numDays",
+  "paramType" : {
+    "exportId" : "Number",
+    "name" : "Number"
+  },
+  "question" : "How many days back would you like to a report for?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 } ]

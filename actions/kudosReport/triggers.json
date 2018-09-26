@@ -1,0 +1,11 @@
+[ {
+  "text" : "kudos report",
+  "requiresMention" : true,
+  "isRegex" : false,
+  "caseSensitive" : false
+}, {
+  "text" : "^kudos report for last (\\d+) days?$",
+  "requiresMention" : true,
+  "isRegex" : true,
+  "caseSensitive" : false
+} ]

@@ -31,6 +31,9 @@ uploadFile().then((fileInfo) => {
         name: key,
         value: output[key]
       }))
+    }, {
+      label: "Start over",
+      actionName: "giveKudos"
     }]
   });
 })
