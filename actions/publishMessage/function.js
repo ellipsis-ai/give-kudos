@@ -9,7 +9,8 @@ ${message}
     actionName: "giveKudos",
     label: "Give kudos",
     allowOthers: true,
-    allowMultipleSelections: true
+    allowMultipleSelections: true,
+    quiet: true
   }]
 });
 }

@@ -65,7 +65,7 @@
     "exportId" : "Text",
     "name" : "Text"
   },
-  "question" : "Whom would you like to recognize with kudos?",
+  "question" : "Whom would you like to recognize with kudos? (Note: you'll have a chance to review your submission before publishing.)",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
@@ -125,7 +125,7 @@
     "exportId" : "Text",
     "name" : "Text"
   },
-  "question" : "Which channel should I send kudos in? (I'll remember this next time.)",
+  "question" : "Which channel should I send kudos in?",
   "isSavedForTeam" : true,
   "isSavedForUser" : false
 }, {

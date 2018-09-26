@@ -38,7 +38,8 @@ if (!ellipsis.env.KUDOS_SHEET_ID || !ellipsis.env.KUDOS_SHEET_NAME) {
             actionName: "giveKudos",
             label: "Give kudos",
             allowOthers: true,
-            allowMultipleSelections: true
+            allowMultipleSelections: true,
+            quiet: true
           }]
         };
         ellipsis.success(`
@@ -53,7 +54,7 @@ In the last ${numDays === 1 ? "day" : `${numDays} days`}, ${kudoTextFor(names)}
 
 function kudoTextFor(names) {
   if (names.length === 0) {
-    return "nobody has been given kudos. It’s not too late!"
+    return "nobody has been given kudos. It’s never too late!"
   } else if (names.length === 1) {
     return `kudos have been given to ${names[0]}. Anyone else deserve a shout-out?`
   } else {
