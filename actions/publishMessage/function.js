@@ -7,7 +7,7 @@ ${message}
 `, {
   choices: [{
     actionName: "giveKudos",
-    label: "Give kudos",
+    label: "Give kudos to others",
     allowOthers: true,
     allowMultipleSelections: true,
     quiet: true

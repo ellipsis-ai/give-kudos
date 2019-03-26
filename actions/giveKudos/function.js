@@ -1,5 +1,5 @@
 function(recipient, reason, impact, file, ellipsis) {
-  const box = require('ellipsis-box');
+  const box = ellipsis.require('ellipsis-box@0.3.1');
 const formatList = require('formatting').formatList;
 
 uploadFile().then((fileInfo) => {
