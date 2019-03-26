@@ -1,7 +1,10 @@
 function(numDays, ellipsis) {
   const client = require('google-client')(ellipsis);
-const {google} = require('googleapis');
-const sheets = google.sheets('v4');
+const {google} = ellipsis.require('googleapis@38.0.0');
+const sheets = google.sheets({
+  version: 'v4',
+  auth: client
+});
 const inspect = require('util').inspect;
 const moment = require('moment-timezone');
 moment.tz.setDefault(ellipsis.teamInfo.timeZone);

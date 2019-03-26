@@ -2,10 +2,12 @@
   "text" : "kudos report",
   "requiresMention" : true,
   "isRegex" : false,
-  "caseSensitive" : false
+  "caseSensitive" : false,
+  "triggerType" : "MessageSent"
 }, {
   "text" : "^kudos report for last (\\d+) days?$",
   "requiresMention" : true,
   "isRegex" : true,
-  "caseSensitive" : false
+  "caseSensitive" : false,
+  "triggerType" : "MessageSent"
 } ]
